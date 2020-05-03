@@ -29,7 +29,7 @@ namespace Add_Monthly_Sales
 
         private void buttonShow_Click(object sender, EventArgs e)
         {
-            string connetionString = "Data Source = Dell; Initial Catalog = CoffeeDB; Integrated Security = True";
+            string connetionString = "Data Source = DESKTOP-C9RSMTE; Initial Catalog = CoffeeDB; Integrated Security = True";
             MessageBox.Show(listBoxMonthFrom.SelectedValue.ToString());
             //int year_from = (int)listBoxYearFrom.SelectedItem;
             //int month_from = (int)listBoxMonthFrom.SelectedValue;
@@ -42,8 +42,8 @@ namespace Add_Monthly_Sales
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(sqlDataAdapter);
             sqlConnection.Open();
 
-            //try
-            //{
+            try
+            {
 
 
             DataTable table = new DataTable
@@ -59,11 +59,11 @@ namespace Add_Monthly_Sales
             dataGridViewSold.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
 
             dataGridViewSold.DataSource = productSoldBindingSource;
-            //}
-            //catch (Exception)
-            //{
-            //throw;
-            //}
+            }
+                catch (Exception)
+            {
+                throw;
+            }
 
             sqlConnection.Close();
 

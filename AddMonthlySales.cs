@@ -24,13 +24,13 @@ namespace Add_Monthly_Sales
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string connetionString = "Data Source=Dell;Initial Catalog=CoffeeDB;Integrated Security=True"; ;
+            string connetionString = "Data Source=DESKTOP-C9RSMTE;Initial Catalog=CoffeeDB;Integrated Security=True"; ;
             SqlConnection connection = new SqlConnection(connetionString);
             SqlCommand command;
             string sql;
 
-            try
-            {
+            //try
+           // {
                 int selected_product_index = comboBoxProduct.SelectedIndex;
 
                 int p_id = (int)comboBoxProduct.SelectedValue;
@@ -84,11 +84,11 @@ namespace Add_Monthly_Sales
                 }
                 command.Dispose();
                 connection.Close();
-            }
-            catch (Exception)
-            {
-              throw;
-            } 
+          //  }
+         //   catch (Exception)
+          //  {
+          //    throw;
+           // } 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
